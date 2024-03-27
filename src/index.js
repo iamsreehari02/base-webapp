@@ -4,6 +4,7 @@
   import reportWebVitals from "./reportWebVitals";
   import { RouterProvider, createBrowserRouter } from "react-router-dom";
   import SignIn from "./pages/signin/SignIn";
+import PageWrapper from "./pages/pagewrapper/PageWrapper";
 
   const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -11,6 +12,10 @@
     {
       path: "/",
       element: <SignIn />,
+    },
+    {
+      path: "/pagewrapper",
+      element: <PageWrapper />,
     },
   ]);
   root.render(

@@ -4,8 +4,14 @@ import { SocialIcons } from "../../constants/Constants";
 import GoogleIcon from "../../assets/icons/google.svg";
 import AppleIcon from "../../assets/icons/apple.svg";
 import CommonButton from "../../components/commonbutton/CommonButton";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate("/pagewrapper");
+  };
+
   return (
     <div className="w-screen overflow-hidden">
       <div className="grid grid-cols-2">
@@ -33,7 +39,10 @@ const SignIn = () => {
                 <img src={GoogleIcon} alt="Google" className="w-6 h-6 mr-2" />
                 Sign in with Google
               </button>
-              <button className="flex items-center text-slate-400 py-2 px-4 bg-white rounded-22xl focus:outline-none focus:shadow-outline" style={{ alignSelf: 'flex-start' }}>
+              <button
+                className="flex items-center text-slate-400 py-2 px-4 bg-white rounded-22xl focus:outline-none focus:shadow-outline"
+                style={{ alignSelf: "flex-start" }}
+              >
                 <img src={AppleIcon} alt="Apple" className="w-6 h-6 mr-2" />
                 Sign in with Apple
               </button>
@@ -68,9 +77,12 @@ const SignIn = () => {
                 />
               </div>
               <div className="flex items-center justify-between">
-                <CommonButton label="Sign In"/>
+                <CommonButton label="Sign In" onclick={handleNavigation} />
               </div>
-              <p className="text-center mt-5 text-gray-400">Don’t have an account? <span className="text-customBlue">Register here</span></p>
+              <p className="text-center mt-5 text-gray-400">
+                Don’t have an account?{" "}
+                <span className="text-customBlue">Register here</span>
+              </p>
             </form>
           </div>
         </div>
